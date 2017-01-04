@@ -1,0 +1,84 @@
+{
+    "Config": {
+		"Subscriptions":[
+			{
+				"Name":"Sandbox",
+				"Id":"1234"
+			}
+		],
+        "Environments": [
+            {
+                "Name": "dev",
+                "ApiResourceGroup": "webapidev",
+                "FunctionResourceGroup": "webfundev",
+                "Subscription": "Sandbox",
+                "Region": "North Central US",
+				"StorageResourceGroup":"storagedev",
+				"SqlResourceGroup":"sqldev",
+				"RedisResourceGroup":"redisdev",
+				"RedisIsReplicated":false,
+				"RedisTier":"C0",
+				"NameAbbr":"dev",
+				"DefaultWebFarmId":"small",
+				"WebServerFarms" :[
+					{"Id": "small", "sku": {
+										"name": "B1",
+										"tier": "Basic",
+										"size": "B1",
+										"family": "B",
+										"capacity": 1
+										} }]
+            },
+            {
+                "Name": "test",
+                "ApiResourceGroup": "webapitest",
+                "FunctionResourceGroup": "webfuntest",
+                "Subscription": "Sandbox",
+                "Region": "North Central US",
+				"StorageResourceGroup":"storagetest",
+				"SqlResourceGroup":"sqltest",
+				"RedisResourceGroup":"redistest",
+				"RedisIsReplicated":false,
+				"RedisTier":"C0",
+				"NameAbbr":"test",
+				"DefaultWebFarmId":"small",
+				"WebServerFarms" :[
+					{"Id": "small", "sku": {
+    "name": "B1",
+    "tier": "Basic",
+    "size": "B1",
+    "family": "B",
+    "capacity": 1
+  } }]
+            }
+        ]
+    },
+	"Mode": "Validate",
+	"AssetPrefix":"yourapp",
+	"TenantId":"12345",
+    "Applications": [
+        {
+            "Name": "sampleapp",
+			"Redis":{
+				"EnvironmentOverrides": [
+					{
+                        "Name": "test",
+                        "Skip": true
+                    }
+				]
+			},
+			
+            "Site": {
+                "WebSiteType": "ui",
+                "EnvironmentOverrides": [
+                    {
+                        "Name": "test",
+                        "Skip": true
+                    }
+                ]
+            }
+        },
+		
+
+    ]
+}

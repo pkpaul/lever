@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lever.Console", "Lever.Cons
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lever.Common", "Lever.Common\Lever.Common.csproj", "{BDB54689-658C-445A-B2EE-29CEBFF4AB76}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9C4F3288-8AA6-4DB0-B192-EDACC2682160}"
+	ProjectSection(SolutionItems) = preProject
+		..\SampleConfig\example.json = ..\SampleConfig\example.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
